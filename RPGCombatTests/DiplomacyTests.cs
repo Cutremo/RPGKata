@@ -3,7 +3,7 @@ using static RPGCombatTests.TestApi;
 
 namespace RPGCombatTests;
 
-public class FactionTests
+public class DiplomacyTests
 {
     [Test]
     public void CharacterHasNoAllegianceByDefault()
