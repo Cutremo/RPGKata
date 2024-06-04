@@ -104,4 +104,13 @@ public class DiplomacyTests
         sut.IsAlliedTo(doc)
             .Should().BeTrue();
     }
+
+    [Test]
+    public void IsNotEnemyOfItself()
+    {
+        var sut = SomeCharacter;
+        
+        sut.IsEnemyOf(sut)
+            .Should().BeFalse();
+    }
 }
