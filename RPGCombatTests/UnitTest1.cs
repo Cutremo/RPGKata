@@ -7,8 +7,22 @@ public class Tests
     public void Setup() { }
 
     [Test]
-    public void Test1()
+    public void skajdkjskj()
     {
-        Assert.Pass();
+        var sut = new Character();
+        var doc = new Character();
+
+        sut.DealDamageTo(doc, 100);
+        
+        doc.Health.Should().Be(900);
     }
+}
+
+public class Character
+{
+    public void DealDamageTo(Character target, int amount)
+    {
+    }
+
+    public int Health => 900;
 }
