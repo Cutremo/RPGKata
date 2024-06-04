@@ -73,6 +73,17 @@ public class Tests
 
         sut.Health.Should().Be(600);
     }
+
+    [Test]
+    public void sjdkjskjdsk()
+    {
+        var sut = new Character();
+        new Character().DealDamageTo(sut, 100);
+        
+        sut.CastHealTo(sut, 1000);
+
+        sut.Health.Should().Be(1000);
+    }
 }
 
 public class Character
@@ -90,6 +101,6 @@ public class Character
 
     public void CastHealTo(Character target, int healAmount)
     {
-        target.Health += healAmount;
+        target.Health = Math.Min(1000, target.Health + healAmount);
     }
 }
