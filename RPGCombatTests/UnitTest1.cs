@@ -5,8 +5,8 @@ namespace RPGCombatTests;
 
 public class Tests
 {
-    static Character SomeCharacter => new();
-    static Character OtherCharacter => new();
+    static Character SomeCharacter => MeleeFighter;
+    static Character OtherCharacter => MeleeFighter;
     
     [Test]
     public void DealHundredDamage()
