@@ -26,7 +26,7 @@ public class Tests
     }
 
     [Test]
-    public void ksjdjskjdks()
+    public void KillCharacter()
     {
         var sut = new Character();
         
@@ -37,7 +37,7 @@ public class Tests
     }
 
     [Test]
-    public void ksjdkjsdjks()
+    public void CharacterIsAliveByDefault()
     {
         new Character()
             .Alive
