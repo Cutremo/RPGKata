@@ -8,3 +8,7 @@
 - [X] A character can heal a Character
     - [X] Dead characters cannot be healed
     - [X] Healing cannot raise health above 1000
+
+
+## Fun List
+- [ ] Precondition amounts to be positive, natural...
