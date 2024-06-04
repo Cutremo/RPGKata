@@ -15,8 +15,15 @@
 - [X] If target is 5 or more levels above the attacker, damage done is reduced by 50%
 - [X] If target is 5 or more levels below the attacker, damage done is increased by 50%
 
+## Iteration Three
+- [ ] Characters have an attack Max Range
+- [ ] Characters cannot attack targets that are out of range
+- [X] Melee fighters have a range of 2 meters.
+- [ ] Ranged fighters have a range of 20 meters.
+
 ## Fun List
 - [ ] Precondition amounts to be positive, natural...
 - [ ] Levels struct
 - [ ] Name 1000 to max health.
 - [ ] Cover edge cases
+- [ ] Name meters

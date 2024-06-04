@@ -1,4 +1,5 @@
 using FluentAssertions;
+using static RPGCombatTests.Character;
 
 namespace RPGCombatTests;
 
@@ -117,5 +118,13 @@ public class Tests
         sut.DealDamageTo(doc, 100);
         
         doc.Health.Should().Be(950);
+    }
+
+    [Test]
+    public void MeleeFigthers_HaveAttackRangeOfTwo()
+    {
+        MeleeFighter
+            .AttackRange
+            .Should().Be(2);
     }
 }
