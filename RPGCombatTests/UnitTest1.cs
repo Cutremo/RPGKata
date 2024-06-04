@@ -60,6 +60,8 @@ public class Character
 {
     public void DealDamageTo(Character target, int damage)
     {
+        if(target == this)
+            throw new ArgumentException("Cannot attack itself");
         target.Health = Math.Max(0, target.Health - damage);
     }
 
