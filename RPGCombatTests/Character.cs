@@ -14,11 +14,11 @@ public class Character
     public bool Dead => !Alive;
     public int Level => 1;
 
-    public void CastHealTo(Character target, int healAmount)
+    public void Heal(int healAmount)
     {
-        if (target.Dead)
+        if (Dead)
             throw new ArgumentException("Cannot heal a dead character");
         
-        target.Health = Math.Min(1000, target.Health + healAmount);
+        Health = Math.Min(1000, Health + healAmount);
     }
 }

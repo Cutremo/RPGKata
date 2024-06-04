@@ -67,7 +67,7 @@ public class Tests
         var sut = SomeCharacter;
         OtherCharacter.DealDamageTo(sut, 500);
         
-        sut.CastHealTo(sut, 100);
+        sut.Heal(100);
 
         sut.Health.Should().Be(600);
     }
@@ -78,7 +78,7 @@ public class Tests
         var sut = SomeCharacter;
         OtherCharacter.DealDamageTo(sut, 100);
         
-        sut.CastHealTo(sut, 1000);
+        sut.Heal(1000);
 
         sut.Health.Should().Be(1000);
     }
