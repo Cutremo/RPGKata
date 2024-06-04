@@ -63,12 +63,12 @@ public class AttackTests
     }
 
     [Test]
-    public void CastHealToCharacter()
+    public void CastHealToItself()
     {
         var sut = SomeCharacter;
         OtherCharacter.DealDamageTo(sut, 500);
         
-        sut.Heal(100);
+        sut.Heal(sut, 100);
 
         sut.Health.Should().Be(600);
     }
@@ -79,9 +79,23 @@ public class AttackTests
         var sut = SomeCharacter;
         OtherCharacter.DealDamageTo(sut, 100);
         
-        sut.Heal(1000);
+        sut.Heal(sut, 1000);
 
         sut.Health.Should().Be(1000);
+    }
+
+    [Test]
+    public void HealAnAlly()
+    {
+        var sut = SomeCharacter;
+        sut.EnrollInFaction(Alliance);
+        var doc = OtherCharacter;
+        doc.EnrollInFaction(Alliance);
+        SomeoneElse.DealDamageTo(doc, 500);
+        
+        sut.Heal(doc, 100);
+
+        doc.Health.Should().Be(600);
     }
 
     [Test]

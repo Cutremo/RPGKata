@@ -22,12 +22,16 @@ public class Character
     {
         Health = MaxHealth;
     }
-    public void Heal(int healAmount)
+    public void Heal(Character target, int healAmount)
     {
-        if(Dead)
+        if(target.Dead)
             throw new ArgumentException("Cannot heal a dead character");
-
-        Health += healAmount;
+        if(Dead)
+            throw new ArgumentException("Cannot heal someone when you are dead");
+        if (IsEnemyOf(target))
+            throw new ArgumentException("Cannot heal an enemy character");
+            
+        target.Health += healAmount;
     }
 
     public void GainLevels(int amount)
