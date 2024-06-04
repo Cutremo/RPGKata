@@ -23,6 +23,17 @@ public class FactionTests
         sut.HasAllegianceTo(Faction.WithName("Alliance")).Should().BeTrue();
         sut.HasAllegianceToAnyFaction().Should().BeTrue();
     }
+
+    [Test]
+    public void MultipleAllegiance()
+    {
+        var sut = SomeCharacter;
+        sut.EnrollInFaction(Faction.WithName("Alliance"));
+        sut.EnrollInFaction(Faction.WithName("Horde"));
+        
+        sut.HasAllegianceTo(Faction.WithName("Alliance")).Should().BeTrue();
+        sut.HasAllegianceTo(Faction.WithName("Horde")).Should().BeTrue();
+    }
     
     
 }
