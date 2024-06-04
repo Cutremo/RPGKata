@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGCombat", "RPGCombat\RPGCombat.csproj", "{F6D921A3-256F-4865-84EE-76D30236EE2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGCombatTests", "RPGCombatTests\RPGCombatTests.csproj", "{7ACB856C-D5DB-4FE3-BE3E-65360D78570E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6D921A3-256F-4865-84EE-76D30236EE2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D921A3-256F-4865-84EE-76D30236EE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D921A3-256F-4865-84EE-76D30236EE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D921A3-256F-4865-84EE-76D30236EE2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ACB856C-D5DB-4FE3-BE3E-65360D78570E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ACB856C-D5DB-4FE3-BE3E-65360D78570E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ACB856C-D5DB-4FE3-BE3E-65360D78570E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ACB856C-D5DB-4FE3-BE3E-65360D78570E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
