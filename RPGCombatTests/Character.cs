@@ -6,6 +6,10 @@ public class Character
     {
         if(target == this)
             throw new ArgumentException("Cannot attack itself");
+        
+        if(this.Level - target.Level >= 5)
+            damage = (int)(damage * 1.5f);
+
         target.Health = Math.Max(0, target.Health - damage);
     }
 

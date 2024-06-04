@@ -18,3 +18,4 @@
 ## Fun List
 - [ ] Precondition amounts to be positive, natural...
 - [ ] Levels struct
+- [ ] Name 1000 to max health.

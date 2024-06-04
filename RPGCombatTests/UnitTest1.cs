@@ -10,9 +10,10 @@ public class Tests
     [Test]
     public void DealHundredDamage()
     {
+        var sut = SomeCharacter;
         var doc = OtherCharacter;
 
-        SomeCharacter.DealDamageTo(doc, 100);
+        sut.DealDamageTo(doc, 100);
 
         doc.Health.Should().Be(900);
     }
@@ -92,5 +93,17 @@ public class Tests
         sut.GainLevels(5);
 
         sut.Level.Should().Be(6);
+    }
+
+    [Test]
+    public void MorePowerfulAttacker_DealsMoreDamage()
+    {
+        var sut = SomeCharacter;
+        var doc = OtherCharacter;
+        sut.GainLevels(5);
+        
+        sut.DealDamageTo(doc, 100);
+        
+        doc.Health.Should().Be(850);
     }
 }
