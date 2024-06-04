@@ -4,9 +4,6 @@ namespace RPGCombatTests;
 
 public class Tests
 {
-    [SetUp]
-    public void Setup() { }
-
     [Test]
     public void DealHundredDamage()
     {
