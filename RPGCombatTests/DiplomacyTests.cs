@@ -72,6 +72,13 @@ public class DiplomacyTests
         sut.IsEnemyOf(doc)
             .Should().BeTrue();
     }
+
+    [Test]
+    public void RelationshipIsCommutative()
+    {
+        SomeCharacter.IsEnemyOf(OtherCharacter)
+            .Should().Be(OtherCharacter.IsEnemyOf(SomeCharacter));
+    }
     
     //is commutative
 }
