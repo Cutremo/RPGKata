@@ -9,6 +9,11 @@
     - [X] Dead characters cannot be healed
     - [X] Healing cannot raise health above 1000
 
+## Iteration Two
+- [X] Characters cannot attack themselves
+- [ ] Characters can only heal themselves
+- [ ] If target is 5 or more levels above the attacker, damage done is reduced by 50%
+- [ ] If target is 5 or more levels below the attacker, damage done is increased by 50%
 
 ## Fun List
 - [ ] Precondition amounts to be positive, natural...
