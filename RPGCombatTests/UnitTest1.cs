@@ -64,7 +64,7 @@ public class Tests
     }
 
     [Test]
-    public void jdksjdjsk()
+    public void CastHealToCharacter()
     {
         var sut = new Character();
         new Character().DealDamageTo(sut, 500);
@@ -75,7 +75,7 @@ public class Tests
     }
 
     [Test]
-    public void sjdkjskjdsk()
+    public void ClampHealthToAThousand()
     {
         var sut = new Character();
         new Character().DealDamageTo(sut, 100);
