@@ -60,4 +60,18 @@ public class DiplomacyTests
         sut.IsEnemyOf(OtherCharacter)
             .Should().BeTrue();
     }
+
+    [Test]
+    public void CharactersWithDifferentFactionsAreEnemies()
+    {
+        var sut = SomeCharacter;
+        sut.EnrollInFaction(Horde);
+        var doc = OtherCharacter;
+        doc.EnrollInFaction(Alliance);
+        
+        sut.IsEnemyOf(doc)
+            .Should().BeTrue();
+    }
+    
+    //is commutative
 }
