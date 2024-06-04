@@ -51,4 +51,13 @@ public class DiplomacyTests
             .Should().BeTrue();
     }
 
+    [Test]
+    public void AlignedCharactersAreEnemiesToUnalignedCharacters()
+    {
+        var sut = SomeCharacter;
+        sut.EnrollInFaction(Horde);
+        
+        sut.IsEnemyOf(OtherCharacter)
+            .Should().BeTrue();
+    }
 }
