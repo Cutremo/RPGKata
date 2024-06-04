@@ -20,7 +20,7 @@ public class Character
     public bool Alive => Health > 0;
     public bool Dead => !Alive;
     public int Level { get; private set; } = 1;
-    public static Character MeleeFighter => new () { AttackRange = 20 };
+    public static Character MeleeFighter => new () { AttackRange = 2 };
     public int AttackRange { get; private init; }
     public static Character RangedFighter => new () { AttackRange = 20 };
 
@@ -37,8 +37,8 @@ public class Character
         Level += amount;
     }
 
-    public bool IsInRange(int distance)
+    public bool IsInAttackRange(int distance)
     {
-        return false;
+        return AttackRange >= distance;
     }
 }
