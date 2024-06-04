@@ -27,12 +27,8 @@ public class Character
     public bool CanPerformHeal(Character target, int healAmount) => CanPerformActionTo(target) && IsAlliedTo(target);
     public void Heal(Character target, int healAmount)
     {
-        if(target.Dead)
-            throw new ArgumentException("Cannot heal a dead character");
-        if(Dead)
-            throw new InvalidOperationException("Cannot heal someone when you are dead");
-        if(IsEnemyOf(target))
-            throw new ArgumentException("Cannot heal an enemy character");
+        if(!CanPerformHeal(target, healAmount))
+            throw new ArgumentException("Invalid heal cast");
 
         target.Health += healAmount;
     }
