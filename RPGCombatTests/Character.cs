@@ -24,6 +24,7 @@ public class Character
         Health = MaxHealth;
     }
 
+    public bool CanPerformHeal(Character target, int healAmount) => CanPerformActionTo(target) && IsAlliedTo(target);
     public void Heal(Character target, int healAmount)
     {
         if(target.Dead)
@@ -85,12 +86,8 @@ public class Character
 
     public bool IsAlliedTo(Character other)
     {
-        if(other == this)
-            throw new ArgumentException("Cannot compare to itself");
-
-
-        return factions.Any(other.HasAllegianceTo);
+        return other == this || factions.Any(other.HasAllegianceTo);
     }
 
-    public bool IsEnemyOf(Character other) => other != this && !IsAlliedTo(other);
+    public bool IsEnemyOf(Character other) => !IsAlliedTo(other);
 }

@@ -106,11 +106,20 @@ public class DiplomacyTests
     }
 
     [Test]
-    public void IsNotEnemyOfItself()
+    public void SomeoneIsNotEnemyOfItself()
     {
         var sut = SomeCharacter;
         
         sut.IsEnemyOf(sut)
             .Should().BeFalse();
+    }
+
+    [Test]
+    public void SomeoneIsAllyOfItself()
+    {
+        var sut = SomeCharacter;
+        
+        sut.IsAlliedTo(sut)
+            .Should().BeTrue();
     }
 }
