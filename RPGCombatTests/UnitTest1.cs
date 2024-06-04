@@ -4,13 +4,14 @@ namespace RPGCombatTests;
 
 public class Tests
 {
+    static Character SomeCharacter => new();
+    static Character OtherCharacter => new();
     [Test]
     public void DealHundredDamage()
     {
-        var sut = new Character();
-        var doc = new Character();
+        var doc = OtherCharacter;
 
-        sut.DealDamageTo(doc, 100);
+        SomeCharacter.DealDamageTo(doc, 100);
 
         doc.Health.Should().Be(900);
     }
@@ -18,7 +19,7 @@ public class Tests
     [Test]
     public void DefaultHealthIsAThousand()
     {
-        new Character()
+        SomeCharacter
             .Health
             .Should().Be(1000);
     }
@@ -26,9 +27,9 @@ public class Tests
     [Test]
     public void KillCharacter()
     {
-        var sut = new Character();
+        var sut = SomeCharacter;
 
-        new Character().DealDamageTo(sut, 1000);
+        OtherCharacter.DealDamageTo(sut, 1000);
 
         sut.Health.Should().Be(0);
         sut.Alive.Should().BeFalse();
@@ -37,7 +38,7 @@ public class Tests
     [Test]
     public void CharacterIsAliveByDefault()
     {
-        new Character()
+        SomeCharacter
             .Alive
             .Should().BeTrue();
     }
@@ -45,9 +46,9 @@ public class Tests
     [Test]
     public void DamageClampsToZero()
     {
-        var sut = new Character();
+        var sut = SomeCharacter;
 
-        new Character().DealDamageTo(sut, 1300);
+        OtherCharacter.DealDamageTo(sut, 1300);
 
         sut.Health.Should().Be(0);
     }
@@ -55,7 +56,7 @@ public class Tests
     [Test]
     public void DefaultLevelIsOne()
     {
-        new Character()
+        SomeCharacter
             .Level
             .Should().Be(1);
     }
@@ -63,8 +64,8 @@ public class Tests
     [Test]
     public void CastHealToCharacter()
     {
-        var sut = new Character();
-        new Character().DealDamageTo(sut, 500);
+        var sut = SomeCharacter;
+        OtherCharacter.DealDamageTo(sut, 500);
         
         sut.CastHealTo(sut, 100);
 
@@ -74,8 +75,8 @@ public class Tests
     [Test]
     public void ClampHealthToAThousand()
     {
-        var sut = new Character();
-        new Character().DealDamageTo(sut, 100);
+        var sut = SomeCharacter;
+        OtherCharacter.DealDamageTo(sut, 100);
         
         sut.CastHealTo(sut, 1000);
 
