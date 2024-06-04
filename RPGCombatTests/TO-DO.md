@@ -1,7 +1,7 @@
 ﻿## Iteration One
-- [ ] All Characters, when created, have:
+- [X] All Characters, when created, have:
   - [X] Health, starting at 1000
-  - Level, starting at 1
+  - [X] Level, starting at 1
   - [X] May be Alive or Dead, starting Alive (Alive may be a true/false)
 - [X] Characters can Deal Damage to Characters.
   - [X] A character can die

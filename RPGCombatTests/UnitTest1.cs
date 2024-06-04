@@ -54,6 +54,14 @@ public class Tests
 
         sut.Health.Should().Be(0);
     }
+
+    [Test]
+    public void DefaultLevelIsOne()
+    {
+        new Character()
+            .Level
+            .Should().Be(1);
+    }
 }
 
 public class Character
@@ -67,4 +75,5 @@ public class Character
 
     public int Health { get; private set; } = 1000;
     public bool Alive => Health > 0;
+    public int Level => 1;
 }
