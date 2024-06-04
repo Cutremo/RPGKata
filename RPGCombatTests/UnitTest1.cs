@@ -125,7 +125,7 @@ public class Tests
     {
         MeleeFighter
             .AttackRange
-            .Should().Be(2);
+            .Should().Be(2.Meters());
     }
 
     [Test]
@@ -133,14 +133,14 @@ public class Tests
     {
         RangedFighter
             .AttackRange
-            .Should().Be(20);
+            .Should().Be(20.Meters());
     }
 
     [Test]
     public void DistanceNotInRange()
     {
         MeleeFighter
-            .IsInAttackRange(10)
+            .IsInAttackRange(10.Meters())
             .Should().BeFalse();
     }
 
@@ -148,7 +148,7 @@ public class Tests
     public void DistanceInRange()
     {
         MeleeFighter
-            .IsInAttackRange(2)
+            .IsInAttackRange(2.Meters())
             .Should().BeTrue();
     }
 }

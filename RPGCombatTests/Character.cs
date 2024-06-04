@@ -13,7 +13,7 @@ public class Character
     public bool Dead => !Alive;
     public int Level { get; private set; } = 1;
     public static Character MeleeFighter => new() { AttackRange = 2 };
-    public int AttackRange { get; private init; }
+    public Meters AttackRange { get; private init; }
     public static Character RangedFighter => new() { AttackRange = 20 };
     int MaxHealth => 1000;
 
@@ -34,12 +34,12 @@ public class Character
         Level += amount;
     }
 
-    public bool IsInAttackRange(int distance)
+    public bool IsInAttackRange(Meters distance)
     {
         return AttackRange >= distance;
     }
 
-    public void DealDamageTo(Character target, int damage, int distance = 0)
+    public void DealDamageTo(Character target, int damage, Meters distance = default)
     {
         if(target == this)
             throw new ArgumentException("Cannot attack itself");
