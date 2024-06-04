@@ -17,7 +17,7 @@
 
 ## Iteration Three
 - [X] Characters have an attack Max Range
-- [ ] Characters cannot attack targets that are out of range
+- [X] Characters cannot attack targets that are out of range
 - [X] Melee fighters have a range of 2 meters.
 - [X] Ranged fighters have a range of 20 meters.
 
