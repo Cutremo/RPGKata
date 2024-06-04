@@ -5,6 +5,6 @@
   - [X] May be Alive or Dead, starting Alive (Alive may be a true/false)
 - [X] Characters can Deal Damage to Characters.
   - [X] A character can die
-- [ ] A character can heal a Character
-    - [ ] Dead characters cannot be healed
-    - [ ] Healing cannot raise health above 1000
+- [X] A character can heal a Character
+    - [X] Dead characters cannot be healed
+    - [X] Healing cannot raise health above 1000
