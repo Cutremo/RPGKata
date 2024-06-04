@@ -35,6 +35,14 @@ public class Tests
         sut.Health.Should().Be(0);
         sut.Alive.Should().BeFalse();
     }
+
+    [Test]
+    public void ksjdkjsdjks()
+    {
+        new Character()
+            .Alive
+            .Should().BeTrue();
+    }
 }
 
 public class Character
@@ -46,5 +54,5 @@ public class Character
     }
 
     public int Health { get; private set; } = 1000;
-    public bool Alive => false;
+    public bool Alive => Health > 0;
 }
