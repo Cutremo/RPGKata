@@ -6,7 +6,7 @@ namespace RPGCombatTests;
 public class FactionTests
 {
     [Test]
-    public void jskjdsjkjdsk()
+    public void CharacterHasNoAllegianceByDefault()
     {
         SomeCharacter
             .HasAllegianceToAnyFaction()
@@ -25,12 +25,4 @@ public class FactionTests
     }
     
     
-}
-
-public struct Faction
-{
-    string name;
-    Faction(string name) => this.name = name;
-    public static Faction None => new();
-    public static Faction WithName(string name) => new(name);
 }
