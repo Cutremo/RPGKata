@@ -1,13 +1,11 @@
 using FluentAssertions;
 using static RPGCombatTests.Character;
+using static RPGCombatTests.TestApi;
 
 namespace RPGCombatTests;
 
-public class Tests
+public class AttackTests
 {
-    static Character SomeCharacter => MeleeFighter;
-    static Character OtherCharacter => MeleeFighter;
-    
     [Test]
     public void DealHundredDamage()
     {

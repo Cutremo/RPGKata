@@ -55,4 +55,9 @@ public class Character
 
         target.Health -= damage;
     }
+
+    public bool IsEnrolledInAnyFaction()
+    {
+        return false;
+    }
 }
