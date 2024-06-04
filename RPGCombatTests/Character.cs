@@ -2,21 +2,25 @@
 
 public class Character
 {
-    public int Health { get; private set; } = 1000;
+    public int Health { get; private set; }
     public bool Alive => Health > 0;
     public bool Dead => !Alive;
     public int Level { get; private set; } = 1;
     public static Character MeleeFighter => new() { AttackRange = 2 };
     public int AttackRange { get; private init; }
     public static Character RangedFighter => new() { AttackRange = 20 };
+    int MaxHealth => 1000;
 
-    private Character(){}
+    private Character()
+    {
+        Health = MaxHealth;
+    }
     public void Heal(int healAmount)
     {
         if(Dead)
             throw new ArgumentException("Cannot heal a dead character");
 
-        Health = Math.Min(1000, Health + healAmount);
+        Health = Math.Min(MaxHealth, Health + healAmount);
     }
 
     public void GainLevels(int amount)
