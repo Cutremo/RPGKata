@@ -26,6 +26,7 @@
 - [X] Newly created Characters belong to no Faction.
 - [X] Characters can Join one or more factions
 - [ ] Players belonging to the same Faction are considered allies
+  - [ ] Unaligned characters are enemies
 - [ ] Allies cannot deal damage to one another
 - [ ] Allies can heal one another
 

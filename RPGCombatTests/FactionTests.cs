@@ -42,4 +42,10 @@ public class FactionTests
             .HasAllegianceTo(Faction.WithName("Horde"))
             .Should().BeFalse();
     }
+
+    [Test]
+    public void alskdlskldk()
+    {
+        SomeCharacter.IsAlliedTo(OtherCharacter).Should().BeFalse();
+    }
 }

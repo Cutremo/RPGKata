@@ -68,4 +68,9 @@ public class Character
     {
         return factions.Contains(faction);
     }
+
+    public bool IsAlliedTo(Character other)
+    {
+        return false;
+    }
 }
