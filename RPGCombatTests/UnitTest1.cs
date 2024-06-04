@@ -7,7 +7,7 @@ public class Tests
     public void Setup() { }
 
     [Test]
-    public void skajdkjskj()
+    public void DealHundredDamage()
     {
         var sut = new Character();
         var doc = new Character();
@@ -16,13 +16,23 @@ public class Tests
         
         doc.Health.Should().Be(900);
     }
+
+    [Test]
+    public void DefaultHealthIsAThousand()
+    {
+        new Character()
+            .Health
+            .Should().Be(1000);
+    }
 }
 
 public class Character
 {
-    public void DealDamageTo(Character target, int amount)
+    
+    public void DealDamageTo(Character target, int damage)
     {
+        target.Health -= damage;
     }
 
-    public int Health => 900;
+    public int Health { get; private set; } = 1000;
 }
