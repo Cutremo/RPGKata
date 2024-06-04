@@ -66,6 +66,6 @@ public class Character
 
     public bool HasAllegianceTo(Faction faction)
     {
-        return true;
+        return factions.Contains(faction);
     }
 }

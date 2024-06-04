@@ -34,6 +34,12 @@ public class FactionTests
         sut.HasAllegianceTo(Faction.WithName("Alliance")).Should().BeTrue();
         sut.HasAllegianceTo(Faction.WithName("Horde")).Should().BeTrue();
     }
-    
-    
+
+    [Test]
+    public void HasNoAllegianceToCertainFactionByDefault()
+    {
+        SomeCharacter
+            .HasAllegianceTo(Faction.WithName("Horde"))
+            .Should().BeFalse();
+    }
 }

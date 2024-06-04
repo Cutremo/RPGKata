@@ -22,9 +22,9 @@
 - [X] Ranged fighters have a range of 20 meters.
 
 ## Iteration Four
-- [ ] Characters may belong to one or more Factions.
-- [ ] Newly created Characters belong to no Faction.
-- [ ] Characters can Join one or more factions
+- [X] Characters may belong to one or more Factions.
+- [X] Newly created Characters belong to no Faction.
+- [X] Characters can Join one or more factions
 - [ ] Players belonging to the same Faction are considered allies
 - [ ] Allies cannot deal damage to one another
 - [ ] Allies can heal one another
