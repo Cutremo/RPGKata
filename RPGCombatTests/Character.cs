@@ -60,4 +60,13 @@ public class Character
     {
         return false;
     }
+
+    public void EnrollInFaction(Faction faction)
+    {
+    }
+
+    public bool IsEnrolledInFaction(Faction withName)
+    {
+        return true;
+    }
 }
