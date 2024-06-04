@@ -9,6 +9,9 @@ public class Character
         
         if(this.Level - target.Level >= 5)
             damage = (int)(damage * 1.5f);
+        
+        if (target.Level - this.Level >= 5)
+            damage = (int)(damage * 0.5f);
 
         target.Health = Math.Max(0, target.Health - damage);
     }

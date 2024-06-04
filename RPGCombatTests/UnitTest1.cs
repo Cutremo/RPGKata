@@ -106,4 +106,16 @@ public class Tests
         
         doc.Health.Should().Be(850);
     }
+
+    [Test]
+    public void LessPowerfulAttacker_DealsLessDamage()
+    {
+        var sut = SomeCharacter;
+        var doc = OtherCharacter;
+        doc.GainLevels(5);
+        
+        sut.DealDamageTo(doc, 100);
+        
+        doc.Health.Should().Be(950);
+    }
 }

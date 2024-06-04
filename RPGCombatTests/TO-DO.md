@@ -12,10 +12,11 @@
 ## Iteration Two
 - [X] Characters cannot attack themselves
 - [X] Characters can only heal themselves
-- [ ] If target is 5 or more levels above the attacker, damage done is reduced by 50%
-- [ ] If target is 5 or more levels below the attacker, damage done is increased by 50%
+- [X] If target is 5 or more levels above the attacker, damage done is reduced by 50%
+- [X] If target is 5 or more levels below the attacker, damage done is increased by 50%
 
 ## Fun List
 - [ ] Precondition amounts to be positive, natural...
 - [ ] Levels struct
 - [ ] Name 1000 to max health.
+- [ ] Cover edge cases
