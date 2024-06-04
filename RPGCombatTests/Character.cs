@@ -64,16 +64,26 @@ public class Character
 
     public void EnrollInFaction(Faction faction)
     {
+        if (faction.Equals(Faction.None))
+            throw new ArgumentException("Cannot enroll in Null faction");
+        
         factions.Add(faction);
     }
 
     public bool HasAllegianceTo(Faction faction)
     {
+        if(faction.Equals(Faction.None))
+            throw new ArgumentException("Cannot compare to Null faction");
+        
         return factions.Contains(faction);
     }
 
     public bool IsAlliedTo(Character other)
     {
+        if (other == this)
+            throw new ArgumentException("Cannot compare to itself");
+        
+        
         return factions.Any(other.HasAllegianceTo);
     }
     public bool IsEnemyOf(Character other) => !IsAlliedTo(other);

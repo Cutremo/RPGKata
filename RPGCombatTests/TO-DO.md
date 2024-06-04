@@ -27,7 +27,7 @@
 - [X] Characters can Join one or more factions
 - [X] Players belonging to the same Faction are considered allies
   - [X] Unaligned characters are enemies
-- [ ] Allies cannot deal damage to one another
+- [X] Allies cannot deal damage to one another
 - [ ] Allies can heal one another
 
 ## Fun List
