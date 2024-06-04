@@ -44,8 +44,10 @@ public class DiplomacyTests
     }
 
     [Test]
-    public void alskdlskldk()
+    public void UnalignedCharactersAreEnemies()
     {
-        SomeCharacter.IsAlliedTo(OtherCharacter).Should().BeFalse();
+        SomeCharacter
+            .IsEnemyOf(OtherCharacter)
+            .Should().BeTrue();
     }
 }

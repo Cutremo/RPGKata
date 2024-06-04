@@ -73,4 +73,5 @@ public class Character
     {
         return false;
     }
+    public bool IsEnemyOf(Character other) => !IsAlliedTo(other);
 }
