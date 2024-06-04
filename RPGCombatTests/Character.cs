@@ -3,7 +3,7 @@
 public class Character
 {
     int health;
-    IList<Faction> factions = new List<Faction>();
+    readonly IList<Faction> factions = new List<Faction>();
 
     public int Health
     {
