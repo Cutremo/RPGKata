@@ -12,7 +12,7 @@ public class Character
     public int Health { get; private set; } = 1000;
     public bool Alive => Health > 0;
     public bool Dead => !Alive;
-    public int Level => 1;
+    public int Level { get; private set; } = 1;
 
     public void Heal(int healAmount)
     {
@@ -20,5 +20,10 @@ public class Character
             throw new ArgumentException("Cannot heal a dead character");
         
         Health = Math.Min(1000, Health + healAmount);
+    }
+
+    public void GainLevels(int amount)
+    {
+        Level += amount;
     }
 }

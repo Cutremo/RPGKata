@@ -6,6 +6,7 @@ public class Tests
 {
     static Character SomeCharacter => new();
     static Character OtherCharacter => new();
+    
     [Test]
     public void DealHundredDamage()
     {
@@ -81,5 +82,15 @@ public class Tests
         sut.Heal(1000);
 
         sut.Health.Should().Be(1000);
+    }
+
+    [Test]
+    public void LevelUp()
+    {
+        var sut = SomeCharacter;
+
+        sut.GainLevels(5);
+
+        sut.Level.Should().Be(6);
     }
 }

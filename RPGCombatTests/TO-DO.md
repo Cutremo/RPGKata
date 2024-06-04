@@ -17,3 +17,4 @@
 
 ## Fun List
 - [ ] Precondition amounts to be positive, natural...
+- [ ] Levels struct
