@@ -3,6 +3,7 @@
 public class Character
 {
     int health;
+    IList<Faction> factions = new List<Faction>();
     public int Health
     {
         get => health;
@@ -56,16 +57,14 @@ public class Character
         target.Health -= damage;
     }
 
-    public bool IsEnrolledInAnyFaction()
-    {
-        return false;
-    }
+    public bool IsEnrolledInAnyFaction() => factions.Any();
 
     public void EnrollInFaction(Faction faction)
     {
+        factions.Add(faction);
     }
 
-    public bool IsEnrolledInFaction(Faction withName)
+    public bool HasAllegianceTo(Faction faction)
     {
         return true;
     }

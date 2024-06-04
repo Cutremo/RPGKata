@@ -20,9 +20,11 @@ public class FactionTests
         
         sut.EnrollInFaction(Faction.WithName("Alliance"));
         
-        sut.IsEnrolledInFaction(Faction.WithName("Alliance"))
-            .Should().BeTrue();
+        sut.HasAllegianceTo(Faction.WithName("Alliance")).Should().BeTrue();
+        sut.IsEnrolledInAnyFaction().Should().BeTrue();
     }
+    
+    
 }
 
 public struct Faction
