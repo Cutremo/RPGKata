@@ -39,7 +39,7 @@ public class Character
     {
         return AttackRange >= distance;
     }
-
+    
     public void DealDamageTo(Character target, int damage, Meters distance = default)
     {
         if(target == this)
@@ -47,6 +47,9 @@ public class Character
 
         if(!IsInAttackRange(distance))
             throw new ArgumentException("Target is out of range");
+        
+        if (IsAlliedTo(target))
+            throw new ArgumentException("Cannot attack an allied character");
 
         if(this.Level - target.Level >= 5)
             damage = (int)(damage * 1.5f);
