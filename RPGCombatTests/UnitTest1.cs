@@ -62,6 +62,17 @@ public class Tests
             .Level
             .Should().Be(1);
     }
+
+    [Test]
+    public void jdksjdjsk()
+    {
+        var sut = new Character();
+        new Character().DealDamageTo(sut, 500);
+        
+        sut.CastHealTo(sut, 100);
+
+        sut.Health.Should().Be(600);
+    }
 }
 
 public class Character
@@ -76,4 +87,9 @@ public class Character
     public int Health { get; private set; } = 1000;
     public bool Alive => Health > 0;
     public int Level => 1;
+
+    public void CastHealTo(Character target, int healAmount)
+    {
+        target.Health += healAmount;
+    }
 }
