@@ -24,6 +24,17 @@ public class Tests
             .Health
             .Should().Be(1000);
     }
+
+    [Test]
+    public void ksjdjskjdks()
+    {
+        var sut = new Character();
+        
+        new Character().DealDamageTo(sut, 1000);
+        
+        sut.Health.Should().Be(0);
+        sut.Alive.Should().BeFalse();
+    }
 }
 
 public class Character
@@ -35,4 +46,5 @@ public class Character
     }
 
     public int Health { get; private set; } = 1000;
+    public bool Alive => false;
 }
