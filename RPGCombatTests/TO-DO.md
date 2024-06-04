@@ -21,9 +21,19 @@
 - [X] Melee fighters have a range of 2 meters.
 - [X] Ranged fighters have a range of 20 meters.
 
+## Iteration Four
+- [ ] Characters may belong to one or more Factions.
+- [ ] Newly created Characters belong to no Faction.
+- [ ] Characters can Join one or more factions
+- [ ] Players belonging to the same Faction are considered allies
+- [ ] Allies cannot deal damage to one another
+- [ ] Allies can heal one another
+
 ## Fun List
 - [ ] Precondition amounts to be positive, natural...
 - [ ] Levels struct
 - [X] Name 1000 to max health.
 - [ ] Cover edge cases
-- [ ] Name meters
+- [X] Name meters
+- [ ] Build characters in tests semantically
+
