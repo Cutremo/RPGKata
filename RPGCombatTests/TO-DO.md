@@ -28,7 +28,7 @@
 - [X] Players belonging to the same Faction are considered allies
   - [X] Unaligned characters are enemies
 - [X] Allies cannot deal damage to one another
-- [ ] Allies can heal one another
+- [X] Allies can heal one another
 
 ## Fun List
 - [ ] Precondition amounts to be positive, natural...

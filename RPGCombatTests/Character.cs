@@ -4,6 +4,7 @@ public class Character
 {
     int health;
     IList<Faction> factions = new List<Faction>();
+
     public int Health
     {
         get => health;
@@ -22,20 +23,23 @@ public class Character
     {
         Health = MaxHealth;
     }
+
     public void Heal(Character target, int healAmount)
     {
         if(target.Dead)
             throw new ArgumentException("Cannot heal a dead character");
         if(Dead)
-            throw new ArgumentException("Cannot heal someone when you are dead");
-        if (IsEnemyOf(target))
+            throw new InvalidOperationException("Cannot heal someone when you are dead");
+        if(IsEnemyOf(target))
             throw new ArgumentException("Cannot heal an enemy character");
-            
+
         target.Health += healAmount;
     }
 
     public void GainLevels(int amount)
     {
+        if(amount < 0)
+            throw new ArgumentException("Levels is negative");
         Level += amount;
     }
 
@@ -43,16 +47,22 @@ public class Character
     {
         return AttackRange >= distance;
     }
-    
+
     public void DealDamageTo(Character target, int damage, Meters distance = default)
     {
+        if(Dead)
+            throw new InvalidOperationException("Cannot attack when dead");
+
+        if(target.Dead)
+            throw new ArgumentException("Cannot attack a dead character");
+
         if(target == this)
             throw new ArgumentException("Cannot attack itself");
 
         if(!IsInAttackRange(distance))
             throw new ArgumentException("Target is out of range");
-        
-        if (IsAlliedTo(target))
+
+        if(IsAlliedTo(target))
             throw new ArgumentException("Cannot attack an allied character");
 
         if(this.Level - target.Level >= 5)
@@ -68,9 +78,9 @@ public class Character
 
     public void EnrollInFaction(Faction faction)
     {
-        if (faction.Equals(Faction.None))
+        if(faction.Equals(Faction.None))
             throw new ArgumentException("Cannot enroll in Null faction");
-        
+
         factions.Add(faction);
     }
 
@@ -78,17 +88,18 @@ public class Character
     {
         if(faction.Equals(Faction.None))
             throw new ArgumentException("Cannot compare to Null faction");
-        
+
         return factions.Contains(faction);
     }
 
     public bool IsAlliedTo(Character other)
     {
-        if (other == this)
+        if(other == this)
             throw new ArgumentException("Cannot compare to itself");
-        
-        
+
+
         return factions.Any(other.HasAllegianceTo);
     }
+
     public bool IsEnemyOf(Character other) => other != this && !IsAlliedTo(other);
 }
