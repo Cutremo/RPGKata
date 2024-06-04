@@ -48,22 +48,13 @@ public class Character
         return AttackRange >= distance;
     }
 
+    bool CanPerformActionTo(Character target) => this.Alive && target.Alive;
+    bool IsValidAttack(Character target, int damage, Meters distance) => CanPerformActionTo(target) && IsInAttackRange(distance) && IsEnemyOf(target);
+
     public void DealDamageTo(Character target, int damage, Meters distance = default)
     {
-        if(Dead)
-            throw new InvalidOperationException("Cannot attack when dead");
-
-        if(target.Dead)
-            throw new ArgumentException("Cannot attack a dead character");
-
-        if(target == this)
-            throw new ArgumentException("Cannot attack itself");
-
-        if(!IsInAttackRange(distance))
-            throw new ArgumentException("Target is out of range");
-
-        if(IsAlliedTo(target))
-            throw new ArgumentException("Cannot attack an allied character");
+        if(!IsValidAttack(target, damage, distance))
+            throw new InvalidOperationException("Invalid attack");
 
         if(this.Level - target.Level >= 5)
             damage = (int)(damage * 1.5f);
