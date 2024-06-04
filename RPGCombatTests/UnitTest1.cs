@@ -135,4 +135,12 @@ public class Tests
             .AttackRange
             .Should().Be(20);
     }
+
+    [Test]
+    public void DistanceNotInRange()
+    {
+        MeleeFighter
+            .IsInRange(10)
+            .Should().BeFalse();
+    }
 }

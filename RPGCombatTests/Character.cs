@@ -36,4 +36,9 @@ public class Character
     {
         Level += amount;
     }
+
+    public bool IsInRange(int distance)
+    {
+        return false;
+    }
 }
