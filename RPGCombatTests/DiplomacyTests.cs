@@ -18,9 +18,9 @@ public class DiplomacyTests
     {
         var sut = SomeCharacter;
         
-        sut.EnrollInFaction(Faction.WithName("Alliance"));
+        sut.EnrollInFaction(Alliance);
         
-        sut.HasAllegianceTo(Faction.WithName("Alliance")).Should().BeTrue();
+        sut.HasAllegianceTo(Alliance).Should().BeTrue();
         sut.HasAllegianceToAnyFaction().Should().BeTrue();
     }
 
@@ -28,18 +28,18 @@ public class DiplomacyTests
     public void MultipleAllegiance()
     {
         var sut = SomeCharacter;
-        sut.EnrollInFaction(Faction.WithName("Alliance"));
-        sut.EnrollInFaction(Faction.WithName("Horde"));
+        sut.EnrollInFaction(Alliance);
+        sut.EnrollInFaction(Horde);
         
-        sut.HasAllegianceTo(Faction.WithName("Alliance")).Should().BeTrue();
-        sut.HasAllegianceTo(Faction.WithName("Horde")).Should().BeTrue();
+        sut.HasAllegianceTo(Alliance).Should().BeTrue();
+        sut.HasAllegianceTo(Horde).Should().BeTrue();
     }
 
     [Test]
     public void HasNoAllegianceToCertainFactionByDefault()
     {
         SomeCharacter
-            .HasAllegianceTo(Faction.WithName("Horde"))
+            .HasAllegianceTo(Horde)
             .Should().BeFalse();
     }
 
@@ -50,4 +50,5 @@ public class DiplomacyTests
             .IsEnemyOf(OtherCharacter)
             .Should().BeTrue();
     }
+
 }
