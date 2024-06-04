@@ -57,7 +57,7 @@ public class Character
         target.Health -= damage;
     }
 
-    public bool IsEnrolledInAnyFaction() => factions.Any();
+    public bool HasAllegianceToAnyFaction() => factions.Any();
 
     public void EnrollInFaction(Faction faction)
     {
