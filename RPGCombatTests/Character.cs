@@ -71,7 +71,7 @@ public class Character
 
     public bool IsAlliedTo(Character other)
     {
-        return false;
+        return factions.Any(other.HasAllegianceTo);
     }
     public bool IsEnemyOf(Character other) => !IsAlliedTo(other);
 }

@@ -79,6 +79,29 @@ public class DiplomacyTests
         SomeCharacter.IsEnemyOf(OtherCharacter)
             .Should().Be(OtherCharacter.IsEnemyOf(SomeCharacter));
     }
-    
-    //is commutative
+
+    [Test]
+    public void AllyWhenInSameFaction()
+    {
+        var sut = SomeCharacter;
+        sut.EnrollInFaction(Alliance);
+        var doc = OtherCharacter;
+        doc.EnrollInFaction(Alliance);
+        
+        sut.IsAlliedTo(doc)
+            .Should().BeTrue();
+    }
+
+    [Test]
+    public void ToBeAlliesOnlyASharedFactionIsNeeded()
+    {
+        var sut = SomeCharacter;
+        sut.EnrollInFaction(Alliance);
+        sut.EnrollInFaction(Horde);
+        var doc = OtherCharacter;
+        doc.EnrollInFaction(Alliance);
+        
+        sut.IsAlliedTo(doc)
+            .Should().BeTrue();
+    }
 }
