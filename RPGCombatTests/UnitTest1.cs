@@ -127,4 +127,12 @@ public class Tests
             .AttackRange
             .Should().Be(2);
     }
+
+    [Test]
+    public void RangeFigthers_HaveAttackRangeOfTwo()
+    {
+        RangedFighter
+            .AttackRange
+            .Should().Be(20);
+    }
 }

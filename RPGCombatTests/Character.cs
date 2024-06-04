@@ -20,8 +20,9 @@ public class Character
     public bool Alive => Health > 0;
     public bool Dead => !Alive;
     public int Level { get; private set; } = 1;
-    public static Character MeleeFighter => new();
-    public int AttackRange => 2;
+    public static Character MeleeFighter => new () { AttackRange = 20 };
+    public int AttackRange { get; private init; }
+    public static Character RangedFighter => new () { AttackRange = 20 };
 
     public void Heal(int healAmount)
     {
