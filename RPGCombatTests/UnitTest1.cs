@@ -1,4 +1,5 @@
 using FluentAssertions;
+
 namespace RPGCombatTests;
 
 public class Tests
@@ -13,7 +14,7 @@ public class Tests
         var doc = new Character();
 
         sut.DealDamageTo(doc, 100);
-        
+
         doc.Health.Should().Be(900);
     }
 
@@ -29,9 +30,9 @@ public class Tests
     public void KillCharacter()
     {
         var sut = new Character();
-        
+
         new Character().DealDamageTo(sut, 1000);
-        
+
         sut.Health.Should().Be(0);
         sut.Alive.Should().BeFalse();
     }
@@ -43,14 +44,23 @@ public class Tests
             .Alive
             .Should().BeTrue();
     }
+
+    [Test]
+    public void DamageClampsToZero()
+    {
+        var sut = new Character();
+
+        new Character().DealDamageTo(sut, 1300);
+
+        sut.Health.Should().Be(0);
+    }
 }
 
 public class Character
 {
-    
     public void DealDamageTo(Character target, int damage)
     {
-        target.Health -= damage;
+        target.Health = Math.Max(0, target.Health - damage);
     }
 
     public int Health { get; private set; } = 1000;
