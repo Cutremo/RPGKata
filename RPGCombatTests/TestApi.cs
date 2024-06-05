@@ -1,5 +1,7 @@
-﻿namespace RPGCombatTests;
-using static RPGCombatTests.Character;
+﻿using RPGCombat;
+
+namespace RPGCombatTests;
+using static RPGCombat.Character;
 
 public class TestApi
 {

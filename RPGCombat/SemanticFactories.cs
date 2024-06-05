@@ -1,4 +1,4 @@
-﻿namespace RPGCombatTests;
+﻿namespace RPGCombat;
 
 public static class SemanticFactories
 {

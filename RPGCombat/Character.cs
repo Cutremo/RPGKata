@@ -1,4 +1,4 @@
-﻿namespace RPGCombatTests;
+﻿namespace RPGCombat;
 
 public class Character
 {
@@ -24,7 +24,7 @@ public class Character
         Health = MaxHealth;
     }
 
-    public bool CanPerformHeal(Character target, int healAmount) => CanPerformActionTo(target) && IsAlliedTo(target);
+    bool CanPerformHeal(Character target, int healAmount) => CanPerformActionTo(target) && IsAlliedTo(target);
     public void Heal(Character target, int healAmount)
     {
         if(!CanPerformHeal(target, healAmount))

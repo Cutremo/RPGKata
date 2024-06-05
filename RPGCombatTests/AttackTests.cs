@@ -1,5 +1,6 @@
 using FluentAssertions;
-using static RPGCombatTests.Character;
+using RPGCombat;
+using static RPGCombat.Character;
 using static RPGCombatTests.TestApi;
 
 namespace RPGCombatTests;
