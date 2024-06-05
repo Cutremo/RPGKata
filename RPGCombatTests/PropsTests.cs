@@ -7,7 +7,7 @@ namespace RPGCombatTests;
 public class PropsTests
 {
     [Test]
-    public void lskdlksdkls()
+    public void DealSomeDamageToProps()
     {
         var sut = SomeCharacter;
         var doc = Tree;
@@ -17,7 +17,7 @@ public class PropsTests
     }
 
     [Test]
-    public void ksldklasldklk()
+    public void DealMoreDamageToProps()
     {
         var sut = SomeCharacter;
         var doc = Tree;
@@ -27,7 +27,7 @@ public class PropsTests
     }
 
     [Test]
-    public void sjkdjsjdsk()
+    public void PropsHealthFloorsToZero()
     {
         var sut = SomeCharacter;
         var doc = Tree;
@@ -37,7 +37,7 @@ public class PropsTests
     }
 
     [Test]
-    public void kslkdlskdlskl()
+    public void PropsAreNotDestroyedByDefault()
     {
         Tree
             .Destroyed
@@ -45,10 +45,11 @@ public class PropsTests
     }
 
     [Test]
-    public void lskdlksldsl()
+    public void DestroyProps()
     {
         var sut = SomeCharacter;
         var doc = Tree;
+        
         sut.PerformAttack(doc, 3000);
         
         doc.Destroyed.Should().BeTrue();
