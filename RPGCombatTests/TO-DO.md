@@ -30,11 +30,19 @@
 - [X] Allies cannot deal damage to one another
 - [X] Allies can heal one another
 
+## Iteration Five
+- [ ] Characters can damage non-character things (props)
+- [ ] These things cannot be healed and they do not deal damage
+- [ ] These things do not belong to factions, they are neutral
+- [ ] When reduced to 0 health, things are destroyed
+- [ ] Things may have any max health
+
+
 ## Fun List
-- [ ] Precondition amounts to be positive, natural...
-- [ ] Levels struct
+- [ ] Precondition amounts to be positive, natural by creating structs...
 - [X] Name 1000 to max health.
 - [ ] Cover edge cases
+- [ ] Test the queries that are used as contracts.
 - [X] Name meters
 - [ ] Build characters in tests semantically
 
