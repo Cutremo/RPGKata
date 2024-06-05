@@ -46,7 +46,9 @@ public class Character
     }
 
     bool CanPerformActionTo(Character target) => this.Alive && target.Alive;
-    bool IsValidAttack(Character target, int damage, Meters distance) => CanPerformActionTo(target) && IsInAttackRange(distance) && IsEnemyOf(target);
+    bool CanPerformActionTo(Prop target) => this.Alive && !target.Destroyed;
+    bool IsValidAttack(Character target, int damage, Meters distance) => CanPerformActionTo(target) && IsInAttackRange(distance) && IsEnemyOf(target) && damage > 0;
+    bool IsValidAttack(Prop target, int damage, Meters distance) => CanPerformActionTo(target) && IsInAttackRange(distance) && damage > 0;
 
     public void PerformAttack(Character target, int damage, Meters distance = default)
     {
@@ -64,6 +66,9 @@ public class Character
     
     public void PerformAttack(Prop target, int damage, Meters distance = default)
     {
+        if (!IsValidAttack(target, damage, distance))
+            throw new InvalidOperationException("Invalid attack");
+        
         target.TakeDamage(damage);
     }
 
