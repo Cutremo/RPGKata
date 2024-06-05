@@ -34,8 +34,8 @@
 - [X] Characters can damage non-character things (props)
 - [X] These things cannot be healed and they do not deal damage
 - [X These things do not belong to factions, they are neutral
-- [ ] When reduced to 0 health, things are destroyed
-- [ ] Things may have any max health
+- [X] When reduced to 0 health, things are destroyed
+- [X] Things may have any max health
 
 
 ## Fun List
