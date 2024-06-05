@@ -50,6 +50,9 @@ public class Prop
 
     Prop(int maxHealth)
     {
+        if(maxHealth <= 0)
+            throw new ArgumentOutOfRangeException(nameof(maxHealth),
+                "maxHealth must be greater than or equal to zero.");
         MaxHealth = maxHealth;
     }
 
