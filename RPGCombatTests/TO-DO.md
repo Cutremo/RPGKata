@@ -31,9 +31,9 @@
 - [X] Allies can heal one another
 
 ## Iteration Five
-- [ ] Characters can damage non-character things (props)
-- [ ] These things cannot be healed and they do not deal damage
-- [ ] These things do not belong to factions, they are neutral
+- [X] Characters can damage non-character things (props)
+- [X] These things cannot be healed and they do not deal damage
+- [X These things do not belong to factions, they are neutral
 - [ ] When reduced to 0 health, things are destroyed
 - [ ] Things may have any max health
 

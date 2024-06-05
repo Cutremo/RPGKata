@@ -24,7 +24,16 @@ public class PropsTests
         
         doc.Health.Should().Be(0);
     }
-    
+
+    [Test]
+    public void sjkdjsjdsk()
+    {
+        var sut = SomeCharacter;
+        var doc = Prop.Tree;
+        sut.PerformAttack(doc, 3000);
+        
+        doc.Health.Should().Be(0);
+    }
 }
 
 public class Prop
@@ -40,6 +49,6 @@ public class Prop
     
     public void TakeDamage(int amount)
     {
-        Health -= amount;
+        Health = Math.Max(0, Health - amount);
     }
 }
