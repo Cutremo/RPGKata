@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using static RPGCombatTests.Prop;
 using static RPGCombatTests.TestApi;
 
 namespace RPGCombatTests;
@@ -9,46 +10,55 @@ public class PropsTests
     public void lskdlksdkls()
     {
         var sut = SomeCharacter;
-        var doc = Prop.Tree;
+        var doc = Tree;
         sut.PerformAttack(doc, 1000);
         
-        doc.Health.Should().Be(1000);
+        doc.MaxHealth.Should().Be(1000);
     }
 
     [Test]
     public void ksldklasldklk()
     {
         var sut = SomeCharacter;
-        var doc = Prop.Tree;
+        var doc = Tree;
         sut.PerformAttack(doc, 2000);
         
-        doc.Health.Should().Be(0);
+        doc.MaxHealth.Should().Be(0);
     }
 
     [Test]
     public void sjkdjsjdsk()
     {
         var sut = SomeCharacter;
-        var doc = Prop.Tree;
+        var doc = Tree;
         sut.PerformAttack(doc, 3000);
         
-        doc.Health.Should().Be(0);
+        doc.MaxHealth.Should().Be(0);
+    }
+
+    [Test]
+    public void kslkdlskdlskl()
+    {
+        Tree
+            .Destroyed
+            .Should().BeFalse();
     }
 }
 
 public class Prop
 {
 
-    Prop(int health)
+    Prop(int maxHealth)
     {
-        Health = health;
+        MaxHealth = maxHealth;
     }
 
     public static Prop Tree => new(2000);
-    public int Health { get; private set; }
-    
+    public int MaxHealth { get; private set; }
+    public bool Destroyed => false;
+
     public void TakeDamage(int amount)
     {
-        Health = Math.Max(0, Health - amount);
+        MaxHealth = Math.Max(0, MaxHealth - amount);
     }
 }
