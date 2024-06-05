@@ -43,6 +43,16 @@ public class PropsTests
             .Destroyed
             .Should().BeFalse();
     }
+
+    [Test]
+    public void lskdlksldsl()
+    {
+        var sut = SomeCharacter;
+        var doc = Tree;
+        sut.PerformAttack(doc, 3000);
+        
+        doc.Destroyed.Should().BeTrue();
+    }
 }
 
 public class Prop
@@ -58,7 +68,7 @@ public class Prop
 
     public static Prop Tree => new(2000);
     public int MaxHealth { get; private set; }
-    public bool Destroyed => false;
+    public bool Destroyed => MaxHealth == 0;
 
     public void TakeDamage(int amount)
     {
