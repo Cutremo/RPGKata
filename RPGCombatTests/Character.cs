@@ -64,7 +64,7 @@ public class Character
     
     public void PerformAttack(Prop target, int damage, Meters distance = default)
     {
-        
+        target.TakeDamage(damage);
     }
 
     public bool HasAllegianceToAnyFaction() => factions.Any();
