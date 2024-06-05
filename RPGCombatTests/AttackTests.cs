@@ -12,7 +12,7 @@ public class AttackTests
         var sut = SomeCharacter;
         var doc = OtherCharacter;
 
-        sut.DealDamageTo(doc, 100);
+        sut.PerformAttack(doc, 100);
 
         doc.Health.Should().Be(900);
     }
@@ -30,7 +30,7 @@ public class AttackTests
     {
         var sut = SomeCharacter;
 
-        OtherCharacter.DealDamageTo(sut, 1000);
+        OtherCharacter.PerformAttack(sut, 1000);
 
         sut.Health.Should().Be(0);
         sut.Alive.Should().BeFalse();
@@ -49,7 +49,7 @@ public class AttackTests
     {
         var sut = SomeCharacter;
 
-        OtherCharacter.DealDamageTo(sut, 1300);
+        OtherCharacter.PerformAttack(sut, 1300);
 
         sut.Health.Should().Be(0);
     }
@@ -66,7 +66,7 @@ public class AttackTests
     public void CastHealToItself()
     {
         var sut = SomeCharacter;
-        OtherCharacter.DealDamageTo(sut, 500);
+        OtherCharacter.PerformAttack(sut, 500);
         
         sut.Heal(sut, 100);
 
@@ -77,7 +77,7 @@ public class AttackTests
     public void ClampHealthToAThousand()
     {
         var sut = SomeCharacter;
-        OtherCharacter.DealDamageTo(sut, 100);
+        OtherCharacter.PerformAttack(sut, 100);
         
         sut.Heal(sut, 1000);
 
@@ -91,7 +91,7 @@ public class AttackTests
         sut.EnrollInFaction(Alliance);
         var doc = OtherCharacter;
         doc.EnrollInFaction(Alliance);
-        SomeoneElse.DealDamageTo(doc, 500);
+        SomeoneElse.PerformAttack(doc, 500);
         
         sut.Heal(doc, 100);
 
@@ -115,7 +115,7 @@ public class AttackTests
         var doc = OtherCharacter;
         sut.GainLevels(5);
         
-        sut.DealDamageTo(doc, 100);
+        sut.PerformAttack(doc, 100);
         
         doc.Health.Should().Be(850);
     }
@@ -127,7 +127,7 @@ public class AttackTests
         var doc = OtherCharacter;
         doc.GainLevels(5);
         
-        sut.DealDamageTo(doc, 100);
+        sut.PerformAttack(doc, 100);
         
         doc.Health.Should().Be(950);
     }

@@ -45,4 +45,5 @@
 - [ ] Test the queries that are used as contracts.
 - [X] Name meters
 - [ ] Build characters in tests semantically
+- [ ] Attack class?
 

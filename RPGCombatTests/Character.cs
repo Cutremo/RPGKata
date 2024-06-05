@@ -48,7 +48,7 @@ public class Character
     bool CanPerformActionTo(Character target) => this.Alive && target.Alive;
     bool IsValidAttack(Character target, int damage, Meters distance) => CanPerformActionTo(target) && IsInAttackRange(distance) && IsEnemyOf(target);
 
-    public void DealDamageTo(Character target, int damage, Meters distance = default)
+    public void PerformAttack(Character target, int damage, Meters distance = default)
     {
         if(!IsValidAttack(target, damage, distance))
             throw new InvalidOperationException("Invalid attack");
@@ -60,6 +60,11 @@ public class Character
             damage = (int)(damage * 0.5f);
 
         target.Health -= damage;
+    }
+    
+    public void PerformAttack(Prop target, int damage, Meters distance = default)
+    {
+        
     }
 
     public bool HasAllegianceToAnyFaction() => factions.Any();
